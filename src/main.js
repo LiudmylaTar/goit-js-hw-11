@@ -47,7 +47,8 @@ searchForm.addEventListener('submit', event => {
       if (images.length === 0) {
         iziToast.warning({
           title: 'No results',
-          message: 'No images found, try another query!',
+          message:
+            'Sorry, there are no images matching your search query. Please try again!',
           position: 'topRight',
         });
         return;

@@ -114,27 +114,33 @@ h4 {
 
 .loader-wrapper {
   position: fixed;
-  top: 50%;
+  opacity: 1;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: none; /* Спочатку прихований */
-  z-index: 1000;
 }
-
 .loader {
-  width: 50px;
-  height: 50px;
-  border: 5px solid #ccc;
-  border-top-color: #007bff;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  background: #f7f311;
+  position: relative;
 }
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
+.loader:before,
+.loader:after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  inset: 0;
+  background: #0652c5;
+  transform: rotate(0deg) translate(30px);
+  animation: rotate 1s ease infinite;
+}
+.loader:after {
+  animation-delay: 0.1s;
+}
+@keyframes rotate {
   100% {
-    transform: rotate(360deg);
+    transform: rotate(360deg) translate(30px);
   }
 }

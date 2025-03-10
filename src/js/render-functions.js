@@ -46,9 +46,11 @@ export function clearGallery() {
 }
 
 export function showLoader() {
+  console.log('Лоадер показано');
   loader.style.display = 'block';
 }
 
 export function hideLoader() {
+  console.log('Лоадер приховано');
   loader.style.display = 'none';
 }
