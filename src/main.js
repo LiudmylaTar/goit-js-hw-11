@@ -1,7 +1,5 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
 
 import { fetchImages } from './js/pixabay-api';
 import {
@@ -9,21 +7,12 @@ import {
   clearGallery,
   showLoader,
   hideLoader,
+  galleryOpen,
 } from './js/render-functions';
 
 const searchForm = document.querySelector('.form');
 const searchBtn = document.querySelector('.search-btn');
 const inputField = document.querySelector('.form-input');
-
-let gallery = new SimpleLightbox('.gallery-list a', {
-  captions: true,
-  captionsData: 'alt',
-  captionDelay: 250,
-  close: true,
-  nav: true,
-  animationSlide: true,
-  scrollZoom: false,
-});
 
 searchForm.addEventListener('submit', event => {
   event.preventDefault();
@@ -51,10 +40,11 @@ searchForm.addEventListener('submit', event => {
             'Sorry, there are no images matching your search query. Please try again!',
           position: 'topRight',
         });
+        inputField.value = '';
         return;
       }
       renderGallery(images);
-      gallery.refresh();
+      galleryOpen.refresh();
       inputField.value = '';
     })
     .catch(error => {

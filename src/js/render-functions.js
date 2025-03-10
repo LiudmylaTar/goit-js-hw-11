@@ -1,8 +1,21 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 const gallery = document.querySelector('.gallery');
 const loader = document.querySelector('.loader-wrapper');
+
+export let galleryOpen = new SimpleLightbox('.gallery a', {
+  captions: true,
+  captionsData: 'alt',
+  captionDelay: 250,
+  close: true,
+  nav: true,
+  animationSlide: true,
+  scrollZoom: false,
+});
 
 export function renderGallery(images) {
   const markup = images
@@ -39,6 +52,7 @@ export function renderGallery(images) {
     })
     .join('');
   gallery.insertAdjacentHTML('beforeend', markup);
+  galleryOpen.refresh();
 }
 
 export function clearGallery() {
