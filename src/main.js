@@ -11,7 +11,7 @@ import {
   hideLoader,
 } from './js/render-functions';
 
-const searchForm = document.querySelector('.search-form');
+const searchForm = document.querySelector('.form');
 const searchBtn = document.querySelector('.search-btn');
 const inputField = document.querySelector('.form-input');
 

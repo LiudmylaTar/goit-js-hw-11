@@ -1,7 +1,7 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-const gallery = document.querySelector('.gallery-list');
+const gallery = document.querySelector('.gallery');
 const loader = document.querySelector('.loader-wrapper');
 
 export function renderGallery(images) {

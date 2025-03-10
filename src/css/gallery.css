@@ -10,7 +10,7 @@ body {
   margin: 0 20px;
   justify-content: center;
 }
-.search-form {
+.form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,7 +55,7 @@ body {
 .form-input:active {
   border-color: #4e75ff;
 }
-.gallery-list {
+.gallery {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
